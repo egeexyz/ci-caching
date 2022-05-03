@@ -22,11 +22,9 @@ ember/package-lock.json.ember-try
 ember/yarn.lock.ember-try
 ember/DEBUG/
 
-middleman/.bundle
-middleman/.cache
-middleman/.DS_Store
-middleman/.sass-cache
-middleman/build/
-middleman/vendor
+jekyll/.bundle
+jekyll/.jekyll-cache
+jekyll/vendor
+jekyll/_site
 
 nikola/cache
