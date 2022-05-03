@@ -1,0 +1,40 @@
+---
+variables:
+  WORKON_HOME: "$CI_PROJECT_DIR/nikola/.cache/venvs"
+  PIPENV_CACHE_DIR: "$CI_PROJECT_DIR/nikola/.cache/pipenv"
+cache:
+  paths:
+    - ember/node_modules
+    - ember/dist
+    - middleman/vendor/ruby
+    - middleman/build
+    - nikola/output
+    - nikola/.cache
+
+build-ember:
+  image: node:14
+  stage: build
+  before_script:
+    - cd ember
+    - npm install
+  script:
+    - npm run build
+
+build-middleman:
+  image: ruby:3
+  stage: build
+  before_script:
+    - cd middleman
+    - bundle config set path 'vendor'
+    - bundle install
+  script:
+    - bundler exec middleman build
+
+build-nikola:
+  image: python:3.9
+  stage: build
+  before_script:
+    - cd nikola
+    - pipenv sync --bare --dev
+  script:
+    - pipenv run nikola build
