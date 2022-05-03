@@ -24,6 +24,7 @@ build-middleman:
   image: ruby:3
   stage: build
   before_script:
+    - apt update && apt install nodejs -y
     - cd middleman
     - bundle config set path 'vendor'
     - bundle install
@@ -34,6 +35,7 @@ build-nikola:
   image: python:3.9
   stage: build
   before_script:
+    - pip install pipenv
     - cd nikola
     - pipenv sync --bare --dev
   script:
