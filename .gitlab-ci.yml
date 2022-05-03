@@ -28,7 +28,7 @@ build-jekyll:
     - bundle config set path 'vendor'
     - time bundle install
   script:
-    - bundler exec middleman build
+    - bundler exec jekyll build
 
 build-nikola:
   image: python:3.9
