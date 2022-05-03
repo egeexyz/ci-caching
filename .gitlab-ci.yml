@@ -16,18 +16,17 @@ build-ember:
   stage: build
   before_script:
     - cd ember
-    - npm install
+    - time npm install
   script:
     - npm run build
 
-build-middleman:
+build-jekyll:
   image: ruby:3
   stage: build
   before_script:
-    - apt update && apt install nodejs -y
-    - cd middleman
+    - cd jekyll
     - bundle config set path 'vendor'
-    - bundle install
+    - time bundle install
   script:
     - bundler exec middleman build
 
@@ -37,6 +36,6 @@ build-nikola:
   before_script:
     - pip install pipenv
     - cd nikola
-    - pipenv sync --bare --dev
+    - time pipenv sync --bare --dev
   script:
     - pipenv run nikola build
