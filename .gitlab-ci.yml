@@ -23,7 +23,7 @@ build-jekyll:
       - jekyll/vendor/ruby
   before_script:
     - cd jekyll
-    - bundle config set path 'vendor'
+    - bundle config set path "vendor"
     - time bundle install
   script:
     - bundler exec jekyll build
