@@ -1,15 +1,15 @@
 ---
-variables:
-  WORKON_HOME: "$CI_PROJECT_DIR/nikola/.cache/venvs"
-  PIPENV_CACHE_DIR: "$CI_PROJECT_DIR/nikola/.cache/pipenv"
-cache:
-  paths:
-    - ember/node_modules
-    - ember/dist
-    - middleman/vendor/ruby
-    - middleman/build
-    - nikola/output
-    - nikola/.cache
+# variables:
+#   WORKON_HOME: "$CI_PROJECT_DIR/nikola/.cache/venvs"
+#   PIPENV_CACHE_DIR: "$CI_PROJECT_DIR/nikola/.cache/pipenv"
+# cache:
+#   paths:
+#     - ember/node_modules
+#     - ember/dist
+#     - middleman/vendor/ruby
+#     - middleman/build
+#     - nikola/output
+#     - nikola/.cache
 
 build-ember:
   image: node:14
