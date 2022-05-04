@@ -7,7 +7,7 @@ This repository uses Gitlab CI as the [target example](https://github.com/egee-i
 
 ## How to use this repository
 
-The only important thing in this repository is the [.gitlab-ci.yml](https://github.com/egee-irl/ci-caching/blob/main/.gitlab-ci.yml) file. Open it up, examine it, and reverse engineer the bits that are pertinent to your projects. The Ember, Jekyll, and Nikola projects used in the examples are simply quick-start or bootstrap versions of projects that I've worked with before.
+The only important thing in this repository is the [.gitlab-ci.yml](https://github.com/egee-irl/ci-caching/blob/main/.gitlab-ci.yml) file. Open it up, examine it, and reverse engineer the bits that are pertinent to your projects.
 
 ## References
 
