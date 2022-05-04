@@ -7,8 +7,8 @@ cache:
   paths:
     - ember/node_modules
     - ember/dist
-    - middleman/vendor/ruby
-    - middleman/build
+    - jekyll/vendor/ruby
+    - jekyll/build
     - nikola/output
     - nikola/.cache
 
