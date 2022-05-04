@@ -3,6 +3,9 @@ variables:
   WORKON_HOME: "$CI_PROJECT_DIR/nikola/.cache/venvs"
   PIPENV_CACHE_DIR: "$CI_PROJECT_DIR/nikola/.cache/pipenv"
 
+# if you want to use npm ci instead of npm install, you will
+# need to override npm's cache so it is relative to the build dir
+# ex: `npm ci --cache .npm`
 build-ember:
   image: node:14
   stage: build
