@@ -9,7 +9,6 @@ build-ember:
   cache:
     paths:
       - ember/node_modules
-      - ember/dist
   before_script:
     - cd ember
     - time npm install
@@ -22,7 +21,6 @@ build-jekyll:
   cache:
     paths:
       - jekyll/vendor/ruby
-      - jekyll/build
   before_script:
     - cd jekyll
     - bundle config set path 'vendor'
@@ -35,7 +33,6 @@ build-nikola:
   stage: build
   cache:
     paths:
-      - nikola/output
       - nikola/.cache
   before_script:
     - pip install pipenv
