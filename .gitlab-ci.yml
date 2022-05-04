@@ -3,18 +3,13 @@ variables:
   WORKON_HOME: "$CI_PROJECT_DIR/nikola/.cache/venvs"
   PIPENV_CACHE_DIR: "$CI_PROJECT_DIR/nikola/.cache/pipenv"
 
-cache:
-  paths:
-    - ember/node_modules
-    - ember/dist
-    - jekyll/vendor/ruby
-    - jekyll/build
-    - nikola/output
-    - nikola/.cache
-
 build-ember:
   image: node:14
   stage: build
+  cache:
+    paths:
+      - ember/node_modules
+      - ember/dist
   before_script:
     - cd ember
     - time npm install
@@ -24,6 +19,10 @@ build-ember:
 build-jekyll:
   image: ruby:3
   stage: build
+  cache:
+    paths:
+      - jekyll/vendor/ruby
+      - jekyll/build
   before_script:
     - cd jekyll
     - bundle config set path 'vendor'
@@ -34,6 +33,10 @@ build-jekyll:
 build-nikola:
   image: python:3.9
   stage: build
+  cache:
+    paths:
+      - nikola/output
+      - nikola/.cache
   before_script:
     - pip install pipenv
     - cd nikola
