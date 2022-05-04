@@ -17,3 +17,5 @@ Here are some references for some CI platforms I've used and recommend:
 - [Gitlab CI](https://docs.gitlab.com/ee/ci/caching/): 100% Free & Open Sourceand uses markup is similar to Travis.
 - [Circle CI](https://circleci.com/docs/2.0/caching/): Similar to Travis CI but much more container-focused.
 - [Github Actions](https://github.com/actions/cache): Good for simple projects already hosted on Github.
+
+Gitlab also has some great documentation regarding best practices when using caches and artifacts in CI - https://docs.gitlab.com/ee/ci/caching
